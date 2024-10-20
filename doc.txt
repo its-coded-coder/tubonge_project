@@ -1,0 +1,1 @@
+Project Objective: Create a comprehensive backend for a messaging application using Django and PostgreSQL. The application should support user authentication, real-time messaging, and message history retrieval. Utilize external modules and code snippets to expedite development and avoid redundancy.

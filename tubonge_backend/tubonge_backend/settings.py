@@ -40,7 +40,16 @@ INSTALLED_APPS = [
     'users',
     'chat',
     'rest_framework',
+    'channels',
 ]
+
+ASGI_APPLICATION = 'tubonge_backend.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,8 +89,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'tubonge_db',
-        'USER': 'your_db_user',
-        'PASSWORD': 'your_db_password',
+        'USER': 'postgres',
+        'PASSWORD': 'your_password',
         'HOST': 'localhost',
         'PORT': '5432',
     }

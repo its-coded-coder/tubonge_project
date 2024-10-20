@@ -1,29 +1,6 @@
 Watching for file changes with StatReloader
 Exception in thread django-main-thread:
 Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/lib/python3.10/dist-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/lib/python3.10/dist-packages/django/core/management/commands/runserver.py", line 126, in inner_run
-    autoreload.raise_last_exception()
-  File "/usr/local/lib/python3.10/dist-packages/django/utils/autoreload.py", line 87, in raise_last_exception
-    raise _exception[1]
-  File "/usr/local/lib/python3.10/dist-packages/django/core/management/__init__.py", line 394, in execute
-    autoreload.check_errors(django.setup)()
-  File "/usr/local/lib/python3.10/dist-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/lib/python3.10/dist-packages/django/__init__.py", line 24, in setup
-    apps.populate(settings.INSTALLED_APPS)
-  File "/usr/local/lib/python3.10/dist-packages/django/apps/registry.py", line 93, in populate
-    raise ImproperlyConfigured(
-django.core.exceptions.ImproperlyConfigured: Application labels aren't unique, duplicates: messages
-/home/user/tubonge_project/tubonge_backend/tubonge_backend/settings.py changed, reloading.
-Watching for file changes with StatReloader
-Exception in thread django-main-thread:
-Traceback (most recent call last):
   File "/usr/local/lib/python3.10/dist-packages/django/apps/config.py", line 210, in create
     app_module = import_module(app_name)
   File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
@@ -57,3 +34,45 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.10/dist-packages/django/apps/config.py", line 212, in create
     raise ImproperlyConfigured(
 django.core.exceptions.ImproperlyConfigured: Cannot import 'messages'. Check that 'chat.apps.MessagesConfig.name' is correct.
+/home/user/tubonge_project/tubonge_backend/chat/apps.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/lib/python3.10/dist-packages/django/core/management/base.py", line 563, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+auth.User.groups: (fields.E304) Reverse accessor 'Group.user_set' for 'auth.User.groups' clashes with reverse accessor for 'users.CustomUser.groups'.
+	HINT: Add or change a related_name argument to the definition for 'auth.User.groups' or 'users.CustomUser.groups'.
+auth.User.user_permissions: (fields.E304) Reverse accessor 'Permission.user_set' for 'auth.User.user_permissions' clashes with reverse accessor for 'users.CustomUser.user_permissions'.
+	HINT: Add or change a related_name argument to the definition for 'auth.User.user_permissions' or 'users.CustomUser.user_permissions'.
+users.CustomUser.groups: (fields.E304) Reverse accessor 'Group.user_set' for 'users.CustomUser.groups' clashes with reverse accessor for 'auth.User.groups'.
+	HINT: Add or change a related_name argument to the definition for 'users.CustomUser.groups' or 'auth.User.groups'.
+users.CustomUser.user_permissions: (fields.E304) Reverse accessor 'Permission.user_set' for 'users.CustomUser.user_permissions' clashes with reverse accessor for 'auth.User.user_permissions'.
+	HINT: Add or change a related_name argument to the definition for 'users.CustomUser.user_permissions' or 'auth.User.user_permissions'.
+
+System check identified 4 issues (0 silenced).
+dist-packages/django/core/management/base.py", line 563, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+auth.User.groups: (fields.E304) Reverse accessor 'Group.user_set' for 'auth.User.groups' clashes with reverse accessor for 'users.CustomUser.groups'.
+	HINT: Add or change a related_name argument to the definition for 'auth.User.groups' or 'users.CustomUser.groups'.
+auth.User.user_permissions: (fields.E304) Reverse accessor 'Permission.user_set' for 'auth.User.user_permissions' clashes with reverse accessor for 'users.CustomUser.user_permissions'.
+	HINT: Add or change a related_name argument to the definition for 'auth.User.user_permissions' or 'users.CustomUser.user_permissions'.
+users.CustomUser.groups: (fields.E304) Reverse accessor 'Group.user_set' for 'users.CustomUser.groups' clashes with reverse accessor for 'auth.User.groups'.
+	HINT: Add or change a related_name argument to the definition for 'users.CustomUser.groups' or 'auth.User.groups'.
+users.CustomUser.user_permissions: (fields.E304) Reverse accessor 'Permission.user_set' for 'users.CustomUser.user_permissions' clashes with reverse accessor for 'auth.User.user_permissions'.
+	HINT: Add or change a related_name argument to the definition for 'users.CustomUser.user_permissions' or 'auth.User.user_permissions'.
+
+System check identified 4 issues (0 silenced).
